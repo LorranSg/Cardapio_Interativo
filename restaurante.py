@@ -1,7 +1,7 @@
-cliente = input("Bem Vindo ao nosso sistema!! Digite seu nome: ")
+cliente = input("Bem Vindo ao nosso sistema!! Digite seu nome: ") #Identificação do cliente
 print(f"Olá, {cliente}! Seja bem-vindo ao nosso restaurante.")
 
-def exibir_menu():
+def exibir_menu(): #Função para exibir o menu do restaurante
     print("Menu do Restaurante:")
     print("Pratos:")
     print("1. Macarrão")
@@ -13,7 +13,7 @@ def exibir_menu():
     print("3. Água")
     print("4. Cerveja")
 exibir_menu()    
-
+# Definição dos pratos e bebidas disponíveis com seus preços
 pratos = ("Macarrão, Pizza, Panqueca")
 bebidas = ("Refrigerante", "Suco", "Água", "Cerveja")
 refrigerante = {'Coca-Cola': 8.00, 'Guaraná': 7.00,'Fanta': 7.00}
@@ -27,7 +27,7 @@ pedido_lista = []
 conta = 0.0
 primeiro_pedido = True
 
-while True:
+while True: #Loop principal para fazer pedidos
     if primeiro_pedido: 
         pedido = input("Deseja fazer um pedido? (sim/não): ")
         primeiro_pedido = False
@@ -107,7 +107,7 @@ while True:
         case _:
             print("Bebida não disponível.")
     print("Seu pedido até agora: ", pedido_lista)
-    
+# Exibição do resumo do pedido e total da conta    
 print("Resumo do pedido:")
 for item in pedido_lista:
     print("-", item)

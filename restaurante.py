@@ -1,5 +1,5 @@
 cliente = input("Bem Vindo ao nosso sistema!! Digite seu nome: ") #Identificação do cliente
-print(f"Olá, {cliente}! Seja bem-vindo ao nosso restaurante.")
+print(f"Olá, {cliente.strip()}! Seja bem-vindo ao nosso restaurante.")
 
 def exibir_menu(): #Função para exibir o menu do restaurante
     print("Menu do Restaurante:")
@@ -31,15 +31,21 @@ while True: #Loop principal para fazer pedidos
     if primeiro_pedido: 
         pedido = input("Deseja fazer um pedido? (sim/não): ")
         primeiro_pedido = False
+        if pedido not in ["Sim", "sim", "Não", "não"]:
+            print("Resposta inválida!")
+            break
     else:
         pedido = input("Deseja adicionar mais itens ao seu pedido? (sim/não): ")
-    if pedido.lower() == "não":
+    if pedido.lower().strip() == "não":
         print("Obrigado por visitar nosso restaurante. Volte sempre!")
         break
-    else:
+    if pedido not in ["Sim", "sim", "Não", "não"]:
+        print("Resposta inválida!")
+        break
+    if pedido.lower().strip() == "sim":
      print("Pratos disponíveis: ", pratos) 
     prato = input("Qual prato deseja: ")
-    match prato.lower():
+    match prato.lower().strip():
         case "macarrão":
             print("Tipos de macarrão disponíveis: ", macarrão)
             tipo_macarrao = input("Qual tipo de macarrão deseja: ")
@@ -71,7 +77,7 @@ while True: #Loop principal para fazer pedidos
             print("Prato não disponível.")
     print("Bebidas disponíveis: ", bebidas)
     bebida = input("Qual bebida deseja: ")
-    match bebida.lower():
+    match bebida.lower().strip():
         case "refrigerante":
             print("Tipos de refrigerante disponíveis: ", refrigerante)
             tipo_refrigerante = input("Qual tipo de refrigerante deseja: ")

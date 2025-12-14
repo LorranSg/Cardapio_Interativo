@@ -33,7 +33,7 @@ while True: #Loop principal para fazer pedidos
         primeiro_pedido = False
         if pedido not in ["Sim", "sim", "Não", "não"]:
             print("Resposta inválida!")
-            break
+            continue
     else:
         pedido = input("Deseja adicionar mais itens ao seu pedido? (sim/não): ")
     if pedido.lower().strip() == "não":
@@ -41,7 +41,7 @@ while True: #Loop principal para fazer pedidos
         break
     if pedido not in ["Sim", "sim", "Não", "não"]:
         print("Resposta inválida!")
-        break
+        continue
     if pedido.lower().strip() == "sim":
      print("Pratos disponíveis: ", pratos) 
     prato = input("Qual prato deseja: ")
@@ -101,6 +101,7 @@ while True: #Loop principal para fazer pedidos
             tipo_agua = input("Qual tipo de água deseja: ")
             if tipo_agua in agua:
                 pedido_lista.append(tipo_agua)
+                conta += agua[tipo_agua]
         case "cerveja":
             print("Tipos de cerveja disponíveis: ", cerveja)
             tipo_cerveja = input("Qual tipo de cerveja deseja: ")
